@@ -1,0 +1,2 @@
+D:\Space_For_Project\FileManager\Client\Windows\FileManager\Client\bin\Debug\Client.exe.config
+D:\Space_For_Project\FileManager\Client\Windows\FileManager.Client.Windows\Client\bin\Debug\Client.exe.config
