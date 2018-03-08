@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Client.Classes.Load
+namespace Client.Classes.Config
 {
-    class Text
+    /// <summary>
+    /// 
+    /// </summary>
+    class Configs
     {
     }
 }

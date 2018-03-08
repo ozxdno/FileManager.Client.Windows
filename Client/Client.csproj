@@ -46,11 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Collection\Files.cs" />
-    <Compile Include="Classes\Collection\Folders.cs" />
-    <Compile Include="Classes\Collection\Supports.cs" />
-    <Compile Include="Classes\Load\Text.cs" />
-    <Compile Include="Classes\Load\Xml.cs" />
+    <Compile Include="Classes\Config\Config.cs" />
+    <Compile Include="Classes\Config\Configs.cs" />
+    <Compile Include="Classes\FilesModel\BaseFile.cs" />
+    <Compile Include="Classes\FilesModel\BaseFiles.cs" />
     <Compile Include="Classes\Match\Image.cs" />
     <Compile Include="Classes\Model\BaseFileModel.cs" />
     <Compile Include="Classes\Model\FolderModel.cs" />
@@ -60,8 +59,6 @@
     <Compile Include="Classes\Model\TextModel.cs" />
     <Compile Include="Classes\Model\UserModel.cs" />
     <Compile Include="Classes\Model\XmlModel.cs" />
-    <Compile Include="Classes\Save\Text.cs" />
-    <Compile Include="Classes\Save\Xml.cs" />
     <Compile Include="Classes\Tools\String.cs" />
     <Compile Include="Data.cs" />
     <Compile Include="Forms\Login\Form_Login.cs">
@@ -82,6 +79,7 @@
     <Compile Include="Forms\Register\Form_Register.Designer.cs">
       <DependentUpon>Form_Register.cs</DependentUpon>
     </Compile>
+    <Compile Include="Resource\Enums\Language.cs" />
     <Compile Include="Start.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -108,6 +106,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Classes\Communication\" />
+    <Folder Include="Classes\Support\" />
+    <Folder Include="Files\" />
     <Folder Include="Resource\Icons\" />
     <Folder Include="Resource\Strings\" />
   </ItemGroup>

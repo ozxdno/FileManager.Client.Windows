@@ -12,30 +12,43 @@ namespace Client.Classes.Tools
     class String
     {
         /// <summary>
-        /// 从文本中获取第一行。
+        /// 用 mark 连接 strings 的指定开始到结束位置的字符串。
         /// </summary>
-        /// <param name="text">指定文本</param>
-        /// <param name="delete">是否删除第一行</param>
+        /// <param name="strings">待连接的字符串</param>
+        /// <param name="mark">连接符</param>
+        /// <param name="bg">开始位置</param>
+        /// <param name="ed">结束位置</param>
         /// <returns></returns>
-        public static string GetLineFromText(ref string text, bool delete = false)
+        public static string Link(string[] strings, string mark, int bg = 0, int ed = 0)
         {
-            if(text == null || text.Length == 0)
+            if (strings == null || strings.Length == 0) { return ""; }
+            if (ed <= 0) { ed = strings.Length - 1; }
+            if (ed >= strings.Length) { ed = strings.Length - 1; }
+            string res = strings[bg];
+            for (int i = 1; i <= ed; i++)
             {
-                return "";
+                res = res + "|" + strings[i];
             }
-            int idx = 0;
-            while(text[idx]!='\r' && text[idx]!='\n' && text[idx] != 0)
+            return res;
+        }
+
+        /// <summary>
+        /// 清除给定一行字符串左右两端的空格。
+        /// </summary>
+        /// <param name="line">一行字符串</param>
+        /// <returns></returns>
+        public static string ClearLRSpace(string line)
+        {
+            if (line == null || line.Length == 0) { return ""; }
+            while (line.Length > 0 && line[0] == ' ')
             {
-                idx++;
+                line = line.Substring(1);
             }
-            string line = text.Substring(0, idx);
-            if (delete)
+            while (line.Length > 0 && line[line.Length - 1] == ' ')
             {
-                text = text.Substring(idx);
-                while (text.Length > 0 && (text[0] == '\r' || text[0] == '\n' || text[0] == 0))
-                { text = text.Remove(0, 1); }
+                line = line.Remove(line.Length - 1);
             }
-            return text.Substring(0, idx);
+            return line;
         }
     }
 }

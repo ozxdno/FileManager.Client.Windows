@@ -4,16 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Client
+namespace Client.Resource.Enums
 {
     /// <summary>
-    /// 各种需要用到的类的实例化；数据存储区；
+    /// 语言
     /// </summary>
-    class Data
+    public enum Language
     {
         /// <summary>
-        /// 主窗体实例
+        /// 中文
         /// </summary>
-        public static Forms.Main.Form_Main Form_Main;
+        Chinese,
+        /// <summary>
+        /// 英文
+        /// </summary>
+        English
     }
 }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Client.Classes.Save
+namespace Client.Classes.FilesModel
 {
-    class Text
+    class BaseFile
     {
     }
 }

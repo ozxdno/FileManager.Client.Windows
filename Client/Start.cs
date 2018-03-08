@@ -19,7 +19,7 @@ namespace Client
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(Data.Main);
+            Application.Run(Client.Data.Form_Main);
         }
     }
 }
