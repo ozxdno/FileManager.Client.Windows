@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Client.Classes.Model
+namespace Client.Resource.Enums
 {
-    class TextModel : BaseFileModel
+    public enum FileState
     {
-        public TextModel() : base()
-        {
-            
-        }
+        NotExisted,
+        Prepared,
+        Loaded
     }
 }

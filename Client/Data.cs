@@ -9,8 +9,15 @@ namespace Client
     /// <summary>
     /// 各种需要用到的类的实例化；数据存储区；
     /// </summary>
-    class Data
+    static class Data
     {
+        /// <summary>
+        /// pv.ini
+        /// </summary>
+        public static Classes.FilesModel.Text Pvini = new Classes.FilesModel.Text(Classes.Tools.Url.GetExePath() + "\\pv.ini");
+
+
+
         /// <summary>
         /// 主窗体实例
         /// </summary>

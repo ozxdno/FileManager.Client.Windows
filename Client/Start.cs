@@ -29,9 +29,8 @@ namespace Client
         /// </summary>
         static void Test()
         {
-            Client.Classes.Config.Config c = new Classes.Config.Config();
-            c.Value = "1|2|#|4|5";
-            c.SetItem(3, "2222");
+            Classes.FilesModel.Text p = Data.Pvini;
+            p.Load();
         }
     }
 }

@@ -6,3 +6,4 @@ D:\Space_For_Project\FileManager\Client\Windows\FileManager.Client.Windows\Clien
 D:\Space_For_Project\FileManager\Client\Windows\FileManager.Client.Windows\Client\bin\Debug\Client.pdb
 D:\Space_For_Project\FileManager\Client\Windows\FileManager.Client.Windows\Client\obj\Debug\Client.exe
 D:\Space_For_Project\FileManager\Client\Windows\FileManager.Client.Windows\Client\obj\Debug\Client.pdb
+D:\Space_For_Project\FileManager\Client\Windows\FileManager.Client.Windows\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache

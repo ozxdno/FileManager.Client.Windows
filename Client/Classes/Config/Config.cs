@@ -126,7 +126,7 @@ namespace Client.Classes.Config
         }
         public override string ToString()
         {
-            return field + " = " + value;
+            return (field == null || field.Length == 0) ? value : (field + " = " + value);
         }
         public void CopyReference(Config c)
         {
@@ -151,6 +151,38 @@ namespace Client.Classes.Config
             ok = true;
             return ok;
         }
+        public bool AddToTop(bool item)
+        {
+            //if (item == null) { ok = false; return ok; }
+            string v = (item ? "1" : "0") + "|" + value;
+            Value = v;
+            ok = true;
+            return ok;
+        }
+        public bool AddToTop(int item)
+        {
+            //if (item == null) { ok = false; return ok; }
+            string v = item.ToString() + "|" + value;
+            Value = v;
+            ok = true;
+            return ok;
+        }
+        public bool AddToTop(long item)
+        {
+            //if (item == null) { ok = false; return ok; }
+            string v = item.ToString() + "|" + value;
+            Value = v;
+            ok = true;
+            return ok;
+        }
+        public bool AddToTop(double item)
+        {
+            //if (item == null) { ok = false; return ok; }
+            string v = item.ToString() + "|" + value;
+            Value = v;
+            ok = true;
+            return ok;
+        }
         public bool AddToBottom(string item)
         {
             if (item == null) { ok = false; return ok; }
@@ -159,6 +191,39 @@ namespace Client.Classes.Config
             ok = true;
             return ok;
         }
+        public bool AddToBottom(bool item)
+        {
+            //if (item == null) { ok = false; return ok; }
+            string v = value + "|" + (item ? "1" : "0");
+            Value = v;
+            ok = true;
+            return ok;
+        }
+        public bool AddToBottom(int item)
+        {
+            //if (item == null) { ok = false; return ok; }
+            string v = value + "|" + item.ToString();
+            Value = v;
+            ok = true;
+            return ok;
+        }
+        public bool AddToBottom(long item)
+        {
+            //if (item == null) { ok = false; return ok; }
+            string v = value + "|" + item.ToString();
+            Value = v;
+            ok = true;
+            return ok;
+        }
+        public bool AddToBottom(double item)
+        {
+            //if (item == null) { ok = false; return ok; }
+            string v = value + "|" + item.ToString();
+            Value = v;
+            ok = true;
+            return ok;
+        }
+
         public bool DeleteFirstItem()
         {
             if (items == null || items.Length == 0) { ok = false; return false; }
@@ -401,7 +466,7 @@ namespace Client.Classes.Config
                 return 0;
             }
         }
-        public double GetDoublle(int index)
+        public double GetDouble(int index)
         {
             if (items == null) { ok = false; return 0; }
             if (index < 0 || index >= items.Length) { ok = false; return 0; }
@@ -434,6 +499,77 @@ namespace Client.Classes.Config
                 }
             }
             return res;
+        }
+
+        public string FetchFirst_String()
+        {
+            if (items == null || items.Length == 0) { ok = false; return ""; }
+            string s = GetString(0);
+            if (ok) { DeleteFirstItem(); }
+            return s;
+        }
+        public bool FetchFirst_Bool()
+        {
+            if (items == null || items.Length == 0) { ok = false; return false; }
+            bool b = GetBool(0);
+            if (ok) { DeleteFirstItem(); }
+            return b;
+        }
+        public int FetchFirst_Int()
+        {
+            if (items == null || items.Length == 0) { ok = false; return 0; }
+            int s = GetInt(0);
+            if (ok) { DeleteFirstItem(); }
+            return s;
+        }
+        public long FetchFirst_Long()
+        {
+            if (items == null || items.Length == 0) { ok = false; return 0; }
+            long s = GetLong(0);
+            if (ok) { DeleteFirstItem(); }
+            return s;
+        }
+        public double FetchFirst_Double()
+        {
+            if (items == null || items.Length == 0) { ok = false; return 0; }
+            double s = GetDouble(0);
+            if (ok) { DeleteFirstItem(); }
+            return s;
+        }
+        public string FetchLast_String()
+        {
+            if (items == null || items.Length == 0) { ok = false; return ""; }
+            string s = GetString(items.Length - 1);
+            if (ok) { DeleteLastItem(); }
+            return s;
+        }
+        public bool FetchLast_Bool()
+        {
+            if (items == null || items.Length == 0) { ok = false; return false; }
+            bool b = GetBool(items.Length - 1);
+            if (ok) { DeleteLastItem(); }
+            return b;
+        }
+        public int FetchLast_Int()
+        {
+            if (items == null || items.Length == 0) { ok = false; return 0; }
+            int s = GetInt(items.Length - 1);
+            if (ok) { DeleteLastItem(); }
+            return s;
+        }
+        public long FetchLast_Long()
+        {
+            if (items == null || items.Length == 0) { ok = false; return 0; }
+            long s = GetLong(items.Length - 1);
+            if (ok) { DeleteLastItem(); }
+            return s;
+        }
+        public double FetchLast_Double()
+        {
+            if (items == null || items.Length == 0) { ok = false; return 0; }
+            double s = GetDouble(items.Length - 1);
+            if (ok) { DeleteLastItem(); }
+            return s;
         }
 
         public void SetField(string field)
