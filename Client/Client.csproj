@@ -50,34 +50,27 @@
     <Compile Include="Classes\Config\Configs.cs" />
     <Compile Include="Classes\FilesModel\BaseFile.cs" />
     <Compile Include="Classes\FilesModel\BaseFiles.cs" />
+    <Compile Include="Classes\FilesModel\Picture.cs" />
+    <Compile Include="Classes\FilesModel\Text.cs" />
+    <Compile Include="Classes\FilesModel\Xml.cs" />
     <Compile Include="Classes\Match\Image.cs" />
     <Compile Include="Classes\Model\BaseFileModel.cs" />
     <Compile Include="Classes\Model\FolderModel.cs" />
-    <Compile Include="Classes\Model\FVModel.cs" />
     <Compile Include="Classes\Model\PictureModel.cs" />
     <Compile Include="Classes\Model\SupportModel.cs" />
     <Compile Include="Classes\Model\TextModel.cs" />
     <Compile Include="Classes\Model\UserModel.cs" />
     <Compile Include="Classes\Model\XmlModel.cs" />
+    <Compile Include="Classes\Tools\Path.cs" />
     <Compile Include="Classes\Tools\String.cs" />
+    <Compile Include="Classes\Tools\Time.cs" />
     <Compile Include="Data.cs" />
-    <Compile Include="Forms\Login\Form_Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Login\Form_Login.Designer.cs">
-      <DependentUpon>Form_Login.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Files\Config.cs" />
     <Compile Include="Forms\Main\Form_Main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Main\Form_Main.Designer.cs">
       <DependentUpon>Form_Main.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Register\Form_Register.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Register\Form_Register.Designer.cs">
-      <DependentUpon>Form_Register.cs</DependentUpon>
     </Compile>
     <Compile Include="Resource\Enums\Language.cs" />
     <Compile Include="Start.cs" />
@@ -107,7 +100,6 @@
   <ItemGroup>
     <Folder Include="Classes\Communication\" />
     <Folder Include="Classes\Support\" />
-    <Folder Include="Files\" />
     <Folder Include="Resource\Icons\" />
     <Folder Include="Resource\Strings\" />
   </ItemGroup>

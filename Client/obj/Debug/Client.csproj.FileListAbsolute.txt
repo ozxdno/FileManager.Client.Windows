@@ -1,2 +1,8 @@
 D:\Space_For_Project\FileManager\Client\Windows\FileManager\Client\bin\Debug\Client.exe.config
 D:\Space_For_Project\FileManager\Client\Windows\FileManager.Client.Windows\Client\bin\Debug\Client.exe.config
+D:\Space_For_Project\FileManager\Client\Windows\FileManager.Client.Windows\Client\obj\Debug\Client.Properties.Resources.resources
+D:\Space_For_Project\FileManager\Client\Windows\FileManager.Client.Windows\Client\obj\Debug\Client.csproj.GenerateResource.Cache
+D:\Space_For_Project\FileManager\Client\Windows\FileManager.Client.Windows\Client\bin\Debug\Client.exe
+D:\Space_For_Project\FileManager\Client\Windows\FileManager.Client.Windows\Client\bin\Debug\Client.pdb
+D:\Space_For_Project\FileManager\Client\Windows\FileManager.Client.Windows\Client\obj\Debug\Client.exe
+D:\Space_For_Project\FileManager\Client\Windows\FileManager.Client.Windows\Client\obj\Debug\Client.pdb

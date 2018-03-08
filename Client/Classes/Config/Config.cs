@@ -161,12 +161,437 @@ namespace Client.Classes.Config
         }
         public bool DeleteFirstItem()
         {
+            if (items == null || items.Length == 0) { ok = false; return false; }
             Value = Tools.String.Link(items, "|", 1);
-            return true;
+            return ok = true;
         }
         public bool DeleteLastItem()
         {
+            if (items == null || items.Length == 0) { ok = false; return false; }
+            Value = Tools.String.Link(items, "|", 0, items.Length - 1);
+            ok = true;
+            return true;
+        }
 
+        public string GetString_Field()
+        {
+            return field;
+        }
+        public string GetString()
+        {
+            ok = true;
+            return value;
+        }
+        public string GetString(int index)
+        {
+            if (items == null) { ok = false; return ""; }
+            if (index < 0 || index >= items.Length) { ok = false; return ""; }
+            ok = true;
+            return items[index];
+        }
+        public List<string> GetStringList()
+        {
+            if (items == null) { ok = false; return new List<string>(); }
+            ok = true;
+            return items.ToList();
+        }
+        public bool GetBool_Field()
+        {
+            try
+            {
+                ok = true;
+                return int.Parse(field) != 0;
+            }
+            catch
+            {
+                ok = false;
+                return false;
+            }
+        }
+        public bool GetBool()
+        {
+            try
+            {
+                ok = true;
+                return int.Parse(value) != 0;
+            }
+            catch
+            {
+                ok = false;
+                return false;
+            }
+        }
+        public bool GetBool(int index)
+        {
+            if (items == null) { ok = false; return false; }
+            if (index < 0 || index >= items.Length) { ok = false; return false; }
+
+            try
+            {
+                ok = true;
+                return int.Parse(items[index]) != 0;
+            }
+            catch
+            {
+                ok = false;
+                return false;
+            }
+        }
+        public List<bool> GetBoolList()
+        {
+            if (items == null) { ok = false; return new List<bool>(); }
+            List<bool> res = new List<bool>();
+            foreach (string s in items)
+            {
+                try
+                {
+                    res.Add(int.Parse(s) != 0);
+                }
+                catch
+                {
+                    ok = false;
+                    return res;
+                }
+            }
+            return res;
+        }
+        public int GetInt_Field()
+        {
+            try
+            {
+                ok = true;
+                return int.Parse(field);
+            }
+            catch
+            {
+                ok = false;
+                return 0;
+            }
+        }
+        public int GetInt()
+        {
+            try
+            {
+                ok = true;
+                return int.Parse(value);
+            }
+            catch
+            {
+                ok = false;
+                return 0;
+            }
+        }
+        public int GetInt(int index)
+        {
+            if (items == null) { ok = false; return 0; }
+            if (index < 0 || index >= items.Length) { ok = false; return 0; }
+
+            try
+            {
+                ok = true;
+                return int.Parse(items[index]);
+            }
+            catch
+            {
+                ok = false;
+                return 0;
+            }
+        }
+        public List<int> GetIntList()
+        {
+            if (items == null) { ok = false; return new List<int>(); }
+            List<int> res = new List<int>();
+            foreach (string s in items)
+            {
+                try
+                {
+                    res.Add(int.Parse(s));
+                }
+                catch
+                {
+                    ok = false;
+                    return res;
+                }
+            }
+            return res;
+        }
+        public long GetLong_Field()
+        {
+            try
+            {
+                ok = true;
+                return long.Parse(field);
+            }
+            catch
+            {
+                ok = false;
+                return 0;
+            }
+        }
+        public long GetLong()
+        {
+            try
+            {
+                ok = true;
+                return long.Parse(value);
+            }
+            catch
+            {
+                ok = false;
+                return 0;
+            }
+        }
+        public long GetLong(int index)
+        {
+            if (items == null) { ok = false; return 0; }
+            if (index < 0 || index >= items.Length) { ok = false; return 0; }
+
+            try
+            {
+                ok = true;
+                return long.Parse(items[index]);
+            }
+            catch
+            {
+                ok = false;
+                return 0;
+            }
+        }
+        public List<long> GetLongList()
+        {
+            if (items == null) { ok = false; return new List<long>(); }
+            List<long> res = new List<long>();
+            foreach (string s in items)
+            {
+                try
+                {
+                    res.Add(long.Parse(s));
+                }
+                catch
+                {
+                    ok = false;
+                    return res;
+                }
+            }
+            return res;
+        }
+        public double GetDouble_Field()
+        {
+            try
+            {
+                ok = true;
+                return double.Parse(field);
+            }
+            catch
+            {
+                ok = false;
+                return 0;
+            }
+        }
+        public double GetDouble()
+        {
+            try
+            {
+                ok = true;
+                return double.Parse(value);
+            }
+            catch
+            {
+                ok = false;
+                return 0;
+            }
+        }
+        public double GetDoublle(int index)
+        {
+            if (items == null) { ok = false; return 0; }
+            if (index < 0 || index >= items.Length) { ok = false; return 0; }
+
+            try
+            {
+                ok = true;
+                return double.Parse(items[index]);
+            }
+            catch
+            {
+                ok = false;
+                return 0;
+            }
+        }
+        public List<double> GetDoubleList()
+        {
+            if (items == null) { ok = false; return new List<double>(); }
+            List<double> res = new List<double>();
+            foreach (string s in items)
+            {
+                try
+                {
+                    res.Add(double.Parse(s));
+                }
+                catch
+                {
+                    ok = false;
+                    return res;
+                }
+            }
+            return res;
+        }
+
+        public void SetField(string field)
+        {
+            this.field = field;
+            ok = true;
+        }
+        public void SetField(bool field)
+        {
+            this.field = field ? "1" : "0";
+            ok = true;
+        }
+        public void SetField(int field)
+        {
+            this.field = field.ToString();
+            ok = true;
+        }
+        public void SetField(long field)
+        {
+            this.field = field.ToString();
+            ok = true;
+        }
+        public void SetField(double field)
+        {
+            this.field = field.ToString();
+            ok = true;
+        }
+
+        public void SetValue(string value)
+        {
+            this.value = value;
+            ok = true;
+        }
+        public void SetValue(bool value)
+        {
+            this.value = value ? "1" : "0";
+            ok = true;
+        }
+        public void SetValue(int value)
+        {
+            this.value = value.ToString();
+            ok = true;
+        }
+        public void SetValue(long value)
+        {
+            this.value = value.ToString();
+            ok = true;
+        }
+        public void SetValue(double value)
+        {
+            this.value = value.ToString();
+            ok = true;
+        }
+        public void SetValue(List<string> value)
+        {
+            if (value == null) { ok = false; return; }
+            this.Items = value.ToArray();
+            ok = true;
+        }
+        public void SetValue(List<bool> value)
+        {
+            if (value == null) { ok = false; return; }
+            List<string> items = new List<string>();
+            foreach (bool i in value)
+            {
+                items.Add(i ? "1" : "0");
+            }
+            ok = true;
+            SetValue(items);
+        }
+        public void SetValue(List<int> value)
+        {
+            if (value == null) { ok = false; return; }
+            List<string> items = new List<string>();
+            foreach (int i in value)
+            {
+                items.Add(i.ToString());
+            }
+            ok = true;
+            SetValue(items);
+        }
+        public void SetValue(List<long> value)
+        {
+            if (value == null) { ok = false; return; }
+            List<string> items = new List<string>();
+            foreach (int i in value)
+            {
+                items.Add(i.ToString());
+            }
+            ok = true;
+            SetValue(items);
+        }
+        public void SetValue(List<double> value)
+        {
+            if (value == null) { ok = false; return; }
+            List<string> items = new List<string>();
+            foreach (int i in value)
+            {
+                items.Add(i.ToString());
+            }
+            ok = true;
+            SetValue(items);
+        }
+
+        public void SetItem(int index, string item)
+        {
+            if (item == null) { ok = false; return; }
+            if (items == null) { ok = false; return; }
+            if (index < 0 || index >= items.Length) { ok = false; return; }
+
+            string[] temp = items;
+            temp[index] = item;
+            Items = temp;
+            ok = true;
+        }
+        public void SetItem(int index, bool item)
+        {
+            //if (item == null) { ok = false; return; }
+            if (items == null) { ok = false; return; }
+            if (index < 0 || index >= items.Length) { ok = false; return; }
+
+            string[] temp = items;
+            temp[index] = item ? "1" : "0";
+            Items = temp;
+            ok = true;
+        }
+        public void SetItem(int index, int item)
+        {
+            //if (item == null) { ok = false; return; }
+            if (items == null) { ok = false; return; }
+            if (index < 0 || index >= items.Length) { ok = false; return; }
+
+            string[] temp = items;
+            temp[index] = item.ToString();
+            Items = temp;
+            ok = true;
+        }
+        public void SetItem(int index, long item)
+        {
+            //if (item == null) { ok = false; return; }
+            if (items == null) { ok = false; return; }
+            if (index < 0 || index >= items.Length) { ok = false; return; }
+
+            string[] temp = items;
+            temp[index] = item.ToString();
+            Items = temp;
+            ok = true;
+        }
+        public void SetItem(int index, double item)
+        {
+            //if (item == null) { ok = false; return; }
+            if (items == null) { ok = false; return; }
+            if (index < 0 || index >= items.Length) { ok = false; return; }
+
+            string[] temp = items;
+            temp[index] = item.ToString();
+            Items = temp;
+            ok = true;
         }
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -22,6 +22,7 @@ namespace Client.Classes.Tools
         public static string Link(string[] strings, string mark, int bg = 0, int ed = 0)
         {
             if (strings == null || strings.Length == 0) { return ""; }
+            if (bg < 0) { bg = 0; }
             if (ed <= 0) { ed = strings.Length - 1; }
             if (ed >= strings.Length) { ed = strings.Length - 1; }
             string res = strings[bg];

@@ -17,9 +17,21 @@ namespace Client
         [STAThread]
         static void Main()
         {
+            Test();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(Client.Data.Form_Main);
+        }
+
+        /// <summary>
+        /// 测试代码
+        /// </summary>
+        static void Test()
+        {
+            Client.Classes.Config.Config c = new Classes.Config.Config();
+            c.Value = "1|2|#|4|5";
+            c.SetItem(3, "2222");
         }
     }
 }
